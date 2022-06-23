@@ -36,5 +36,17 @@ let pokemonRepository = (function () {
     }
   });
 
+//return assigns keys 'add' and 'getAll'
+  return {
+    add: function(pokemon) {
+      pokemonList.push(pokemon);
+    },
+    getAll: function() {
+      return pokemonList;
+    }
+  };
 
 })();
+
+console.log(pokemonRepository.add([{name: "Pikachu", height: 4, types: "electric"}]));
+console.log(pokemonRepository.getAll());
