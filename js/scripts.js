@@ -26,27 +26,31 @@ let pokemonRepository = (function () {
   console.log(pokemonList[2]);
   */
 
-  //displays each pokemon in array along with their height
-  //adds exclamation with if loop if pokemon height is greater than 6.
+//adds functions for add and getAll
+function add(pokemon) {
+  pokemonList.push(pokemon);
+}
 
-  pokemonList.forEach(function(pokemon) {
-    document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') ');
-    if (pokemon.height > 6) {
-      document.write(' - Wow! That\'s big!');
-    }
-  });
+function getAll(){
+    return pokemonList;
+}
 
 //return assigns keys 'add' and 'getAll'
   return {
-    add: function(pokemon) {
-      pokemonList.push(pokemon);
-    },
-    getAll: function() {
-      return pokemonList;
-    }
+    add: add;
+    getAll: getAll;
   };
 
 })();
 
 console.log(pokemonRepository.add([{name: "Pikachu", height: 4, types: "electric"}]));
 console.log(pokemonRepository.getAll());
+
+//displays each pokemon in pokemonList array along with their height
+//adds exclamation with if loop if pokemon height is greater than 6.
+pokemonList.forEach(function(pokemon) {
+  document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') ');
+  if (pokemon.height > 6) {
+    document.write(' - Wow! That\'s big!');
+  }
+});
