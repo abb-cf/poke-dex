@@ -35,15 +35,6 @@ function getAll(){
     return pokemonList;
 }
 
-//displays each pokemon in pokemonList array along with their height
-//adds exclamation with if loop if pokemon height is greater than 6.
-// pokemonList.forEach(pokemon) {
-//   document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') ');
-//   if (pokemon.height > 6) {
-//     document.write(' - Wow! That\'s big!');
-//   }
-// }
-
 //return assigns keys 'add' and 'getAll'
   return {
     add: add,
@@ -52,14 +43,14 @@ function getAll(){
 
 })();
 
-console.log(pokemonRepository.add([{name: "Pikachu", height: 4, types: "electric"}]));
+pokemonRepository.add({name: "Pikachu", height: 4, types: "electric"})
 console.log(pokemonRepository.getAll());
 
-
-//worked on getting the forEach loop out here somewhere and just couldn't figure it out.
-
-pokemonRepository.getAll.pokemonList.forEach(pokemon)
+//displays each pokemon in pokemonList array along with their height
+//adds exclamation with if loop if pokemon height is greater than 6.
+pokemonRepository.getAll().forEach(pokemon => {
   document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') ');
   if (pokemon.height > 6) {
     document.write(' - Wow! That\'s big!');
   }
+})
