@@ -49,8 +49,9 @@ console.log(pokemonRepository.getAll());
 //displays each pokemon in pokemonList array along with their height
 //adds exclamation with if loop if pokemon height is greater than 6.
 pokemonRepository.getAll().forEach(pokemon => {
-  document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ') ');
-  if (pokemon.height > 6) {
-    document.write(' - Wow! That\'s big!');
+  let pokemonList = document.createElement('.pokemon-list')
+  let listItem = document.createElement('li')
+  let button = document.createElement('button')
+  
   }
 })
