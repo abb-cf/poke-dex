@@ -46,6 +46,10 @@ function addListItem(pokemon){
   pokeList.appendChild(listItem);
 }
 
+function showDetails(pokemon){
+  console.log(pokemon.name);
+}
+
 //return assigns keys 'add' and 'getAll'
   return {
     add: add,
