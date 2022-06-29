@@ -1,23 +1,62 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
 
+:root {
+  --primary-color: #fcba03;
+  --secondary-color: #735b03;
+}
+
  body {
   padding: 20px;
   font-family: 'Open Sans', sans-serif;
 }
 
+h1 {
+  color: var(--primary-color);
+  font-size: 36px;
+  font-weight: bold;
+  border: solid var(--secondary-color);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 10px;
+  text-transform: lowercase;
+}
+
 .poke-list {
   list-style-type: none;
   padding: 10px;
-  background: #fcba03;
+  background: var(--primary-color);
+  border-radius: 4px;
+  text-transform: lowercase;
 }
 
 .poke-list li {
-  background: #735b03;
+  display: inline-column-group;
+  display: flex;
+  background: var(--secondary-color);
   margin: 15px;
   padding: 15px;
   text-align: left;
+  border-radius: 8px;
+  text-transform: lowercase;
 }
 
 button {
   font-size: 24px;
+  font-family: inherit;
+  background-color: inherit;
+  border: none;
+  color: white;
+  display: inline-block;
+  text-transform: lowercase;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button.focus {
+  /* lets the mouse appear as a hand */
+  cursor: pointer;
+
+  /* reduces the opacity of the button upon hover */
+  opacity: 0.8;
 }
