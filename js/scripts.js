@@ -32,13 +32,25 @@ function add(pokemon) {
 }
 
 function getAll(){
-    return pokemonList;
+  return pokemonList;
+}
+
+//new function addListItem
+function addListItem(pokemon){
+  let pokeList = document.querySelector('.poke-list');
+  let listItem = document.createElement('li');
+  let button = document.createElement('button');
+  button.innerText = pokemon.name;
+  button.classList.add('.pokemon-name');
+  listItem.appendChild(button);
+  pokeList.appendChild(listItem);
 }
 
 //return assigns keys 'add' and 'getAll'
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 
 })();
@@ -49,11 +61,5 @@ console.log(pokemonRepository.getAll());
 //displays each pokemon in pokemonList array along with their height
 //adds exclamation with if loop if pokemon height is greater than 6.
 pokemonRepository.getAll().forEach(pokemon => {
-  let pokemonList = document.querySelector('.pokemon-list');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = pokemon.name;
-  button.classList.add('.pokemon-name');
-  listItem.appendChild(button);
-  pokemonList.appendChild(listItem);
+  pokemonRepository.addListItem(pokemon);
 })
