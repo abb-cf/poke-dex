@@ -5,14 +5,14 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.pokemon-list {
+.poke-list {
   list-style-type: none;
   padding: 10px;
-  background: lightgrey;
+  background: #fcba03;
 }
 
-.pokemon-list li {
-  background: #4a420b;
+.poke-list li {
+  background: #735b03;
   margin: 15px;
   padding: 15px;
   text-align: left;
