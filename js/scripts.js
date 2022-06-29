@@ -44,6 +44,10 @@ function addListItem(pokemon){
   button.classList.add('.pokemon-name');
   listItem.appendChild(button);
   pokeList.appendChild(listItem);
+//eventListener for button on click, logs clicked pokemon in console by calling function showDetails
+  button.addEventListener('click', function (event){
+    showDetails(pokemon);
+  })
 }
 
 function showDetails(pokemon){
