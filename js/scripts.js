@@ -32,17 +32,54 @@ let pokemonRepository = (function () {
     console.log(pokemon.name);
   }
 
+  function loadList() {
+    return fetch(apiUrl).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function(item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
+  }
+
+  function loadDetails(item) {
+    let url = item.detailsUrl;
+    return fetch(url).then(function (resonse) {
+      return response.json();
+    }).then(function (details) {
+      //Now we add teh details to the item
+      item.imageUrl = details.spritees.front_default;
+      item.height = details.height;
+      item.types = detsil.types;
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
+
 //return assigns keys 'add' and 'getAll'
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    loadList: loadList,
+    loadDetails: loadDetails
   };
-
 })();
 
-pokemonRepository.add({name: "Pikachu", height: 4, types: "electric"})
-console.log(pokemonRepository.getAll());
+pokemonRepository.loadList().then(function() {
+  //Now the data is loaded!
+  pokemonRepository.getAll().forEach(function(pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
+});
+// pokemonRepository.add({name: "Pikachu", height: 4, types: "electric"})
+// console.log(pokemonRepository.getAll());
 
 //displays each pokemon in pokemonList array along with their height
 //adds exclamation with if loop if pokemon height is greater than 6.
