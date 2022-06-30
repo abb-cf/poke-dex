@@ -1,58 +1,36 @@
 //IIFE variable pokemonRepository
 let pokemonRepository = (function () {
-  //pokemonList array
-  let pokemonList = [
-  {
-    name: "Bulbasaur",
-    height: 7,
-    types: "poison"
-  },
-  {
-    name: "Charmander",
-    height: 6,
-    types: "fire",
-  },
-  {
-    name: "Squirtle",
-    height: 5,
-    types: "water",
+  //connects to pokeapi
+  let pokemonList = []
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+
+  //adds functions for add and getAll
+  function add(pokemon) {
+    pokemonList.push(pokemon);
   }
-  ];
 
-  //tests array code
-  /*
-  console.log(pokemonList[0]);
-  console.log(pokemonList[1]);
-  console.log(pokemonList[2]);
-  */
+  function getAll(){
+    return pokemonList;
+  }
 
-//adds functions for add and getAll
-function add(pokemon) {
-  pokemonList.push(pokemon);
-}
+  //new function addListItem
+  function addListItem(pokemon){
+    let pokeList = document.querySelector('.poke-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('.pokemon-name');
+    listItem.appendChild(button);
+    pokeList.appendChild(listItem);
+  //eventListener for button on click, logs clicked pokemon in console by calling function showDetails
+    button.addEventListener('click', function (event){
+      showDetails(pokemon);
+    })
+  }
 
-function getAll(){
-  return pokemonList;
-}
-
-//new function addListItem
-function addListItem(pokemon){
-  let pokeList = document.querySelector('.poke-list');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-  button.innerText = pokemon.name;
-  button.classList.add('.pokemon-name');
-  listItem.appendChild(button);
-  pokeList.appendChild(listItem);
-//eventListener for button on click, logs clicked pokemon in console by calling function showDetails
-  button.addEventListener('click', function (event){
-    showDetails(pokemon);
-  })
-}
-
-function showDetails(pokemon){
-  console.log(pokemon.name);
-}
+  function showDetails(pokemon){
+    console.log(pokemon.name);
+  }
 
 //return assigns keys 'add' and 'getAll'
   return {
