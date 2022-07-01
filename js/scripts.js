@@ -1,12 +1,19 @@
 //IIFE variable pokemonRepository
 let pokemonRepository = (function () {
   //connects to pokeapi
-  let pokemonList = []
+  let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   //adds functions for add and getAll
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon
+    ) {
+      pokemonList.push(pokemon);
+    } else {
+      console.error("pokemon is not correct");
+    }
   }
 
   function getAll(){
@@ -28,10 +35,6 @@ let pokemonRepository = (function () {
     })
   }
 
-  function showDetails(pokemon){
-    console.log(pokemon.name);
-  }
-
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
@@ -42,6 +45,7 @@ let pokemonRepository = (function () {
           detailsUrl: item.url
         };
         add(pokemon);
+        console.log(pokemon);
       });
     }).catch(function (e) {
       console.error(e);
@@ -54,11 +58,17 @@ let pokemonRepository = (function () {
       return response.json();
     }).then(function (details) {
       //Now we add teh details to the item
-      item.imageUrl = details.spritees.front_default;
+      item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = detsil.types;
+      item.types = details.types;
     }).catch(function (e) {
       console.error(e);
+    });
+  }
+
+  function showDetails(item) {
+    pokemonRepository.loadDetails(item).then(function () {
+      console.log(item);
     });
   }
 
@@ -68,7 +78,8 @@ let pokemonRepository = (function () {
     getAll: getAll,
     addListItem: addListItem,
     loadList: loadList,
-    loadDetails: loadDetails
+    loadDetails: loadDetails,
+    showDetails: showDetails
   };
 })();
 
@@ -78,11 +89,3 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-// pokemonRepository.add({name: "Pikachu", height: 4, types: "electric"})
-// console.log(pokemonRepository.getAll());
-
-//displays each pokemon in pokemonList array along with their height
-//adds exclamation with if loop if pokemon height is greater than 6.
-pokemonRepository.getAll().forEach(pokemon => {
-  pokemonRepository.addListItem(pokemon);
-})
