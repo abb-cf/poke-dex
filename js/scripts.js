@@ -54,7 +54,7 @@ let pokemonRepository = (function () {
 
   function loadDetails(item) {
     let url = item.detailsUrl;
-    return fetch(url).then(function (resonse) {
+    return fetch(url).then(function (response) {
       return response.json();
     }).then(function (details) {
       //Now we add teh details to the item
