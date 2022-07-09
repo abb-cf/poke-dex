@@ -26,7 +26,8 @@ let pokemonRepository = (function () {
     let listItem = document.createElement('li');
     let button = document.createElement('button');
     button.innerText = pokemon.name;
-    button.classList.add('.pokemon-name');
+    button.classList.add('.pokemon-name', 'btn', 'btn-light');
+    listItem.classList.add('group-list-item');
     listItem.appendChild(button);
     pokeList.appendChild(listItem);
   //eventListener for button on click, opens Modal by calling function showDetails
