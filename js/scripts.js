@@ -27,7 +27,7 @@ let pokemonRepository = (function () {
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('btn', 'btn-light');
-    listItem.classList.add('list-group-item');
+    listItem.classList.add('list-group-item-action');
     listItem.appendChild(button);
     pokeList.appendChild(listItem);
   //eventListener for button on click, opens Modal by calling function showDetails
@@ -103,7 +103,7 @@ let pokemonRepository = (function () {
     modalBody.append(imageElementFront);
     modalBody.append(heightElement);
     modalBody.append(typesElement);
-    $('#exampleModalLive').modal();
+    $('#exampleModalCenter').modal();
   }
 
 //return assigns keys 'add' and 'getAll'
