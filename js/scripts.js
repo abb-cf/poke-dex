@@ -92,14 +92,27 @@ let pokemonRepository = (function () {
     modalBody.empty();
 
     // create element for pokemon name
-    let nameElement = $('<h1' + pokemon.name + '</h1>');
+    let nameElement = $('<h1>' + pokemon.name + '</h1>');
     // create img element for image of pokemon
     let imageElementFront = $('<img class="modal-img" style="width:50%">');
     imageElementFront.attr('src', pokemon.imageUrl);
     // create element for height of Pokemon
     let heightElement = $('<p>' + 'height: ' + pokemon.height + '</p>');
     //create element for Pokemon types
-    let typesElement = $('<p>' + 'types: ' + pokemon.types + '</p>');
+    // let typesElement = $('<p>' + 'types: ' + pokemon.types + '</p>');
+
+    let concatTypes = '';
+
+    pokemon.types.forEach((currentType, index) => {
+    if (index != pokemon.types.length[-1]) {
+      concatTypes+=$((currentType.type.name), );
+    }
+    else if (index === pokemon.types.length[-1]) {
+      concatTypes+=$(currentType.type.name);
+    }
+    })
+
+    let typesElement = $('<p>' + 'types: ' + concatTypes + '</p>');
 
     // append elements to variables
     modalTitle.append(nameElement);
