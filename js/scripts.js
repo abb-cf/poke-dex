@@ -67,6 +67,21 @@ let pokemonRepository = (function () {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+
+      // get name with in each object of array
+      let concatTypes = '';
+
+      item.types.forEach((currentType, index) => {
+      if (index != item.types.length-1) {
+        concatTypes+=$((currentType.type.name), );
+      }
+      else if (index === item.types.length-1) {
+        concatTypes+=$(currentType.type.name);
+      }
+      })
+
+      item.typeNames = concatTypes;
+
     }).catch(function (e) {
       console.error(e);
     });
@@ -101,18 +116,7 @@ let pokemonRepository = (function () {
     //create element for Pokemon types
     // let typesElement = $('<p>' + 'types: ' + pokemon.types + '</p>');
 
-    let concatTypes = '';
-
-    pokemon.types.forEach((currentType, index) => {
-    if (index != pokemon.types.length[-1]) {
-      concatTypes+=$((currentType.type.name), );
-    }
-    else if (index === pokemon.types.length[-1]) {
-      concatTypes+=$(currentType.type.name);
-    }
-    })
-
-    let typesElement = $('<p>' + 'types: ' + concatTypes + '</p>');
+    let typesElement = $('<p>' + 'types: ' + pokemon.typeNames + '</p>');
 
     // append elements to variables
     modalTitle.append(nameElement);
