@@ -67,6 +67,7 @@ let pokemonRepository = (function () {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+
     }).catch(function (e) {
       console.error(e);
     });
@@ -99,16 +100,14 @@ let pokemonRepository = (function () {
     // create element for height of Pokemon
     let heightElement = $('<p>' + 'height: ' + pokemon.height + '</p>');
     //create element for Pokemon types
-    // let typesElement = $('<p>' + 'types: ' + pokemon.types + '</p>');
-
     let concatTypes = '';
 
     pokemon.types.forEach((currentType, index) => {
-    if (index != pokemon.types.length[-1]) {
-      concatTypes+=$((currentType.type.name), );
+    if (index != pokemon.types.length -1) {
+      concatTypes+=`${currentType.type.name}, `;
     }
-    else if (index === pokemon.types.length[-1]) {
-      concatTypes+=$(currentType.type.name);
+    else if (index === pokemon.types.length -1) {
+      concatTypes+=`${currentType.type.name}`;
     }
     })
 
