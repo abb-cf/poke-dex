@@ -81,15 +81,18 @@ button:focus,
   background: none;
   color: #777;
   text-decoration: underline;
-}
+}*/
 
 .modal h1 {
   background: var(--primary-color);
   color: white;
   margin-top: 0;
+  border: solid var(--secondary-color);
+  border-radius: 4px;
+  padding: 10px; 
 }
 
-.modal p {
+/* .modal p {
   margin-bottom: 0;
 }
 
@@ -97,7 +100,7 @@ button:focus,
   display: none;
 }
 
-#modal-container.is-visible {
+#modal-container.is-visible { */
   /* CSS for modal container - add your own desired CSS styles here */
   /* position: fixed;
   padding: 20px;
