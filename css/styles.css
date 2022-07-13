@@ -40,7 +40,7 @@
   text-transform: lowercase;
 }
 
-.btn {
+.btn-poke {
   font-size: 24px;
   font-family: inherit;
   background-color: inherit;
@@ -89,7 +89,7 @@ button:focus,
   margin-top: 0;
   border: solid var(--secondary-color);
   border-radius: 4px;
-  padding: 10px; 
+  padding: 10px;
 }
 
 /* .modal p {
