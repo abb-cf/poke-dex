@@ -7,12 +7,12 @@ let pokemonRepository = (function () {
   //adds functions for add and getAll
   function add(pokemon) {
     if (
-      typeof pokemon === "object" &&
-      "name" in pokemon
+      typeof pokemon === 'object' &&
+      'name' in pokemon
     ) {
       pokemonList.push(pokemon);
     } else {
-      console.error("pokemon is not correct");
+      console.error('pokemon is not correct');
     }
   }
 
@@ -34,7 +34,7 @@ let pokemonRepository = (function () {
     listItem.appendChild(button);
     pokeList.appendChild(listItem);
   //eventListener for button on click, opens Modal by calling function showDetails
-    button.addEventListener('click', function (event) {
+    button.addEventListener('click', function () {
       showDetails(pokemon);
     });
   }
@@ -87,7 +87,7 @@ let pokemonRepository = (function () {
   function showModal(pokemon) {
     let modalBody = $('.modal-body');
     let modalTitle = $('.modal-title');
-    let modalHeader = $('.modal-header');
+    // let modalHeader = $('.modal-header');
     // clear any existing data from previously selected pokemon
     modalTitle.empty();
     modalBody.empty();
