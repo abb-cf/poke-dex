@@ -23,6 +23,9 @@
 
 .poke-list {
   list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  flex-wrap: wrap;
   padding: 10px;
   background: var(--primary-color);
   border-radius: 4px;
