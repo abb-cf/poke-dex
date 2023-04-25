@@ -1,6 +1,6 @@
-**PokeDex App**
+#PokeDex App
 
-An application that displays a list of Pokemon names and loads information about each listed Pokemon when name is clicked.
+##An application that displays a list of Pokemon names and loads information about each listed Pokemon when name is clicked.
 
 _Description_
 
@@ -8,7 +8,7 @@ An application that loads data from an external source (Pokemon API), allowing t
 
 **Getting Started**
 
-Access the application at https://abb-cf.github.io/poke-dex/
+_Access the application at https://abb-cf.github.io/poke-dex/_
 
 _Dependencies_
 
