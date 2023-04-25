@@ -1,22 +1,25 @@
 **PokeDex App**
+
 An application that displays a list of Pokemon names and loads information about each listed Pokemon when name is clicked.
 
-*Description*
+_Description_
 An application that loads data from an external source (Pokemon API), allowing the user to view a list of Pokemon. When user clicks on Pokemon name, that Pokemon's details appear in a modal.
 
 **Getting Started**
-*Dependencies*
+
+_Dependencies_
+
 Pokemon API - https://pokeapi.co/
-JavaScript version - ?
+JavaScript
 jQuery
 fetch polyfill
 promise pollyfill
 Popper.js
 Bootstrap JS
 
-*Authors*
+_Authors_
 Amy Badgett Beck - amyjbadgett@gmail.com
 
-*Version History*
+_Version History_
 0.1
 Initial Release
