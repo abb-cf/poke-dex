@@ -8,26 +8,20 @@ An application that loads data from an external source (Pokemon API), allowing t
 
 **Getting Started**
 
+Access the application at https://abb-cf.github.io/poke-dex/
+
 _Dependencies_
 
 Pokemon API - https://pokeapi.co/
-
 JavaScript
-
 jQuery
-
 fetch polyfill
-
 promise pollyfill
-
 Popper.js
-
 Bootstrap JS
 
 _Authors_
-
 Amy Badgett Beck - amyjbadgett@gmail.com
 
 _Version History_
-
 0.1 - Initial Release
