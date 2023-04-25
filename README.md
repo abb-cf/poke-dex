@@ -26,5 +26,5 @@ Amy Badgett Beck - amyjbadgett@gmail.com
 **Version History**
 0.1 - Initial Release
 
-![landing page](img/landing-pg.png "Title is optional")
-![modal](img/modal.png "Title is optional")
+![landing page](img/landing-pg.png "landing page of Pokedex App")
+![modal](img/modal.png "Additional info for each pokemon")
