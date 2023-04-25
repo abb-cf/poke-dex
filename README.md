@@ -26,5 +26,5 @@ Amy Badgett Beck - amyjbadgett@gmail.com
 **Version History**
 0.1 - Initial Release
 
-Markup : ![landing page](img/landing-pg.png/200x150 "Title is optional")
-Markup : ![modal](img/modal.png/200x150 "Title is optional")
+![landing page](img/landing-pg.png/200x150 "Title is optional")
+![modal](img/modal.png/200x150 "Title is optional")
