@@ -1,6 +1,6 @@
-#PokeDex App
+# PokeDex App
 
-##An application that displays a list of Pokemon names and loads information about each listed Pokemon when name is clicked.
+## An application that displays a list of Pokemon names and loads information about each listed Pokemon when name is clicked.
 
 _Description_
 
@@ -10,18 +10,21 @@ An application that loads data from an external source (Pokemon API), allowing t
 
 _Access the application at https://abb-cf.github.io/poke-dex/_
 
-_Dependencies_
+## Dependencies
 
-Pokemon API - https://pokeapi.co/
-JavaScript
-jQuery
-fetch polyfill
-promise pollyfill
-Popper.js
-Bootstrap JS
+- Pokemon API - https://pokeapi.co/
+- JavaScript
+- jQuery
+- fetch polyfill
+- promise pollyfill
+- Popper.js
+- Bootstrap JS
 
-_Authors_
+**Authors**
 Amy Badgett Beck - amyjbadgett@gmail.com
 
-_Version History_
+**Version History**
 0.1 - Initial Release
+
+Markup : ![landing page](img/landing-pg.png/200x150 "Title is optional")
+Markup : ![modal](img/modal.png/200x150 "Title is optional")
